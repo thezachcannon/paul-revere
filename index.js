@@ -12,6 +12,7 @@ figlet('Proxception', function(err, data) {
       return;
   }
   console.log(chalk.cyan(data))
+  console.log(chalk.yellow(`Pointed to ${environment.toUpperCase()}\n`))
   initServers(servers)
 });
 
