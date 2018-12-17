@@ -1,0 +1,8 @@
+{
+    "fooService": {
+        "port": "3030",
+        "development": "https://foo-dev.com",
+        "production": "https://foo-prod.com",
+        "enabled": true
+    }
+}
