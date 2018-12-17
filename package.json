@@ -1,14 +1,16 @@
 {
-  "name": "paul-revere",
+  "name": "proxception",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "startServers": "nodemon --quiet index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.4.1",
+    "figlet": "^1.2.1",
     "http-proxy": "^1.17.0"
   },
   "devDependencies": {
