@@ -7,14 +7,15 @@ let serversJson = fs.readFileSync("./environments/servers.json");
 let servers = JSON.parse(serversJson);
 let proxies = {};
 
-figlet('Proxception', function(err, data) {
-  if (err) {
-      return;
-  }
-  console.log(chalk.cyan(data))
-  console.log(chalk.yellow(`Pointed to ${environment.toUpperCase()}\n`))
-  initServers(servers)
-});
+console.clear();
+console.log(chalk.cyan(figlet.textSync('Proxception', {
+    font: 'Small',
+    horizontalLayout: 'default',
+    verticalLayout: 'default',
+})))
+
+console.log(chalk.yellow(`Pointed to ${environment.toUpperCase()}\n`))
+initServers(servers)
 
 function initServers(servers) {
   if (servers) {
@@ -32,7 +33,7 @@ function initServers(servers) {
           secure: false
         })
         .listen(servers[serverName].port);
-        console.log(`${chalk.blueBright(serverName)} : ${chalk.greenBright('RUNNING')}`)
+        console.log(`${chalk.cyan(serverName)} : ${chalk.greenBright('RUNNING')} ${chalk.magentaBright(`Port:${servers[serverName].port} => ${servers[serverName][environment]}`)}`)
       }
       else{
         console.log(`${chalk.blueBright(serverName)} : ${chalk.redBright('NOT ENABLED')}`)
